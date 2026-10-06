@@ -55,9 +55,11 @@
   }
 
   // Gallery lightbox
-  const tiles = [...document.querySelectorAll('[data-gallery] .tile')];
+  // (tiles are re-rendered by data.js, so look them up at click time)
+  const grid = document.querySelector('[data-gallery]');
   const box = document.querySelector('[data-lightbox]');
   const boxImg = box?.querySelector('[data-lightbox-img]');
+  let tiles = [];
   let current = 0;
   const show = (i) => {
     current = (i + tiles.length) % tiles.length;
@@ -65,8 +67,14 @@
     boxImg.src = tile.dataset.full;
     boxImg.alt = tile.querySelector('img').alt;
   };
-  if (box && boxImg && typeof box.showModal === 'function') {
-    tiles.forEach((tile, i) => tile.addEventListener('click', () => { show(i); box.showModal(); }));
+  if (grid && box && boxImg && typeof box.showModal === 'function') {
+    grid.addEventListener('click', (e) => {
+      const tile = e.target.closest('.tile');
+      if (!tile) return;
+      tiles = [...grid.querySelectorAll('.tile')];
+      show(tiles.indexOf(tile));
+      box.showModal();
+    });
     box.querySelector('[data-lightbox-close]').addEventListener('click', () => box.close());
     box.querySelector('[data-lightbox-prev]').addEventListener('click', () => show(current - 1));
     box.querySelector('[data-lightbox-next]').addEventListener('click', () => show(current + 1));

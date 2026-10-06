@@ -19,8 +19,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css">
+  <link rel="preconnect" href="https://zzqfzpdkldwozytonaxh.supabase.co" crossorigin>
   <link rel="preload" as="image" href="img/hero-2000.webp" imagesrcset="img/hero-1200.webp 1200w, img/hero-2000.webp 2000w" imagesizes="100vw">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
   <a class="skip" href="#main">본문으로 건너뛰기</a>
@@ -36,10 +37,11 @@
         <a href="#about">협회 소개</a>
         <a href="#skimboard">스킴보드란</a>
         <a href="#events">행사</a>
+        <a href="#news" data-news-link hidden>소식</a>
         <a href="#gallery">갤러리</a>
         <a href="#join">함께하기</a>
       </nav>
-      <a class="nav__ig" href="https://www.instagram.com/kska_official/" target="_blank" rel="noopener">
+      <a class="nav__ig" href="https://www.instagram.com/kska_official/" data-ig target="_blank" rel="noopener">
         <i class="ph ph-instagram-logo" aria-hidden="true"></i><span>@kska_official</span>
       </a>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
@@ -51,9 +53,10 @@
       <a href="#about">협회 소개</a>
       <a href="#skimboard">스킴보드란</a>
       <a href="#events">행사</a>
+      <a href="#news" data-news-link hidden>소식</a>
       <a href="#gallery">갤러리</a>
       <a href="#join">함께하기</a>
-      <a href="https://www.instagram.com/kska_official/" target="_blank" rel="noopener">인스타그램 @kska_official</a>
+      <a href="https://www.instagram.com/kska_official/" data-ig target="_blank" rel="noopener">인스타그램 @kska_official</a>
     </div>
   </header>
 
@@ -69,9 +72,9 @@
         <p class="eyebrow hero__eyebrow" data-rise>Korea Skimboard Association</p>
         <h1 class="hero__title" data-rise>
           <span class="hero__en">RIDE THE<br>SHORE BREAK</span>
-          <span class="hero__ko">한국 스킴보드의 다음 파도를 만듭니다</span>
+          <span class="hero__ko" data-setting="hero_ko">한국 스킴보드의 다음 파도를 만듭니다</span>
         </h1>
-        <p class="hero__lead" data-rise>대회와 투어, 입문 프로그램으로 국내 스킴보드 문화를 키우는 비영리 협회입니다.</p>
+        <p class="hero__lead" data-rise data-setting="hero_lead">대회와 투어, 입문 프로그램으로 국내 스킴보드 문화를 키우는 비영리 협회입니다.</p>
         <div class="hero__cta" data-rise>
           <a class="btn btn--primary" href="#events">행사 보기 <i class="ph-bold ph-arrow-down-right" aria-hidden="true"></i></a>
           <a class="btn btn--ghost" href="#join">함께하기</a>
@@ -83,20 +86,20 @@
     <section class="facts" aria-label="협회 활동 요약">
       <div class="wrap facts__grid">
         <div class="fact" data-reveal>
-          <span class="fact__num">2023</span>
-          <span class="fact__label">첫 코리아 오픈 개최</span>
+          <span class="fact__num" data-fact="first-year">2023</span>
+          <span class="fact__label">첫 대회 개최</span>
         </div>
         <div class="fact" data-reveal>
-          <span class="fact__num">3<small>회</small></span>
-          <span class="fact__label">스킴페스트, 부산 송정</span>
+          <span class="fact__num"><span data-fact="fest-count">3</span><small>회</small></span>
+          <span class="fact__label">스킴페스트 개최</span>
         </div>
         <div class="fact" data-reveal>
-          <span class="fact__num">2<small>회</small></span>
-          <span class="fact__label">스킴투어, 울산 나사리와 제주</span>
+          <span class="fact__num"><span data-fact="tour-count">2</span><small>회</small></span>
+          <span class="fact__label">스킴투어 개최</span>
         </div>
         <div class="fact" data-reveal>
-          <span class="fact__num">3<small>곳</small></span>
-          <span class="fact__label">함께 탄 바다, 부산·울산·제주</span>
+          <span class="fact__num"><span data-fact="place-count">3</span><small>곳</small></span>
+          <span class="fact__label">함께 탄 바다, <span data-fact="places">부산·울산·제주</span></span>
         </div>
       </div>
     </section>
@@ -108,7 +111,7 @@
           <h2 class="mission__statement" data-reveal>
             우리의 목표는<br><em>국내 스킴보드 시장의 활성화</em>입니다.
           </h2>
-          <p class="mission__body" data-reveal>
+          <p class="mission__body" data-reveal data-setting="mission_body">
             대한스킴보드협회(KSKA)는 스킴보드를 더 많은 사람이 안전하고 즐겁게 탈 수 있도록 설립된 비영리 단체입니다.
             국내외 스킴보드 커뮤니티와 정보와 기술을 나누고, 새로운 스킴보더를 키웁니다.
           </p>
@@ -183,12 +186,13 @@
     <!-- EVENTS -->
     <section class="events" id="events">
       <div class="wrap events__head">
-        <h2 class="section-title" data-reveal><span class="en">EVENTS</span>지난 행사</h2>
+        <h2 class="section-title" data-reveal><span class="en">EVENTS</span>행사</h2>
         <div class="rail-ctrl">
           <button class="icon-btn" type="button" data-rail-prev aria-label="이전 행사"><i class="ph-bold ph-arrow-left" aria-hidden="true"></i></button>
           <button class="icon-btn" type="button" data-rail-next aria-label="다음 행사"><i class="ph-bold ph-arrow-right" aria-hidden="true"></i></button>
         </div>
       </div>
+      <div class="wrap upcoming" data-upcoming hidden></div>
       <ol class="rail" data-rail>
         <li class="event">
           <figure class="event__img"><img src="img/ev-2026-jeju-1200.webp" srcset="img/ev-2026-jeju-640.webp 640w, img/ev-2026-jeju-1200.webp 1200w" sizes="(min-width: 1024px) 38vw, 82vw" alt="제주 스킴투어 단체 사진, 뒤로 산방산이 보인다" loading="lazy" width="1200" height="800"></figure>
@@ -238,6 +242,14 @@
       </ol>
     </section>
 
+    <!-- NEWS -->
+    <section class="news" id="news" data-news hidden>
+      <div class="wrap news__grid">
+        <h2 class="section-title"><span class="en">NEWS</span>소식</h2>
+        <ul class="news__list" data-news-list></ul>
+      </div>
+    </section>
+
     <!-- GALLERY -->
     <section class="gallery" id="gallery">
       <div class="wrap">
@@ -263,7 +275,7 @@
       <div class="wrap">
         <h2 class="section-title" data-reveal><span class="en">JOIN THE RIDE</span>함께하기</h2>
         <div class="join__grid">
-          <a class="jtile jtile--photo jtile--lg" href="https://www.instagram.com/kska_official/" target="_blank" rel="noopener" data-reveal>
+          <a class="jtile jtile--photo jtile--lg" href="https://www.instagram.com/kska_official/" data-ig target="_blank" rel="noopener" data-reveal>
             <img src="img/join-try-1200.webp" srcset="img/join-try-640.webp 640w, img/join-try-1200.webp 1200w" sizes="(min-width: 1024px) 55vw, 100vw" alt="" loading="lazy" width="1200" height="900">
             <div class="jtile__body">
               <h3>처음이라면, 체험부터</h3>
@@ -271,7 +283,7 @@
               <span class="jtile__cta">DM 보내기 <i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></span>
             </div>
           </a>
-          <a class="jtile jtile--accent" href="https://www.instagram.com/kska_official/" target="_blank" rel="noopener" data-reveal>
+          <a class="jtile jtile--accent" href="https://www.instagram.com/kska_official/" data-ig target="_blank" rel="noopener" data-reveal>
             <i class="ph ph-flag-checkered jtile__icon" aria-hidden="true"></i>
             <div class="jtile__body">
               <h3>대회에 나가고 싶다면</h3>
@@ -279,7 +291,7 @@
               <span class="jtile__cta">DM 보내기 <i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></span>
             </div>
           </a>
-          <a class="jtile jtile--photo jtile--dim" href="https://www.instagram.com/kska_official/" target="_blank" rel="noopener" data-reveal>
+          <a class="jtile jtile--photo jtile--dim" href="https://www.instagram.com/kska_official/" data-ig target="_blank" rel="noopener" data-reveal>
             <img src="img/join-partner-1200.webp" srcset="img/join-partner-640.webp 640w, img/join-partner-1200.webp 1200w" sizes="(min-width: 1024px) 40vw, 100vw" alt="" loading="lazy" width="1200" height="900">
             <div class="jtile__body">
               <h3>후원과 제휴</h3>
@@ -295,7 +307,7 @@
     <section class="sponsor" aria-labelledby="sponsor-title">
       <div class="wrap sponsor__row">
         <h2 id="sponsor-title" class="sponsor__label">공식 스폰서</h2>
-        <a class="sponsor__mark" href="https://www.instagram.com/aliveskim_official/" target="_blank" rel="noopener" aria-label="얼라이브스킴 인스타그램">aliveskim</a>
+        <div class="sponsor__marks" data-sponsors><a class="sponsor__mark" href="https://www.instagram.com/aliveskim_official/" target="_blank" rel="noopener" aria-label="aliveskim">aliveskim</a></div>
       </div>
     </section>
   </main>
@@ -307,10 +319,11 @@
         <p>대한스킴보드협회<br><span>Korea Skimboard Association</span></p>
       </div>
       <ul class="footer__links">
-        <li><a href="https://www.instagram.com/kska_official/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo" aria-hidden="true"></i>@kska_official</a></li>
+        <li><a href="https://www.instagram.com/kska_official/" data-ig target="_blank" rel="noopener"><i class="ph ph-instagram-logo" aria-hidden="true"></i>@kska_official</a></li>
         <li><a href="https://www.instagram.com/aliveskim_official/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo" aria-hidden="true"></i>@aliveskim_official</a></li>
       </ul>
-      <p class="footer__copy">© <span data-year>2026</span> 대한스킴보드협회. All rights reserved.</p>
+      <p class="footer__contact" data-contact hidden></p>
+      <p class="footer__copy">© <span data-year>2026</span> 대한스킴보드협회. All rights reserved. <a class="footer__admin" href="admin.html">관리자</a></p>
     </div>
   </footer>
 
@@ -321,6 +334,8 @@
     <button class="lightbox__nav lightbox__nav--next" type="button" data-lightbox-next aria-label="다음 사진"><i class="ph-bold ph-caret-right" aria-hidden="true"></i></button>
   </dialog>
 
-  <script src="js/main.js?v=2" defer></script>
+  <script src="js/config.js?v=3" defer></script>
+  <script src="js/main.js?v=3" defer></script>
+  <script src="js/data.js?v=3" defer></script>
 </body>
 </html>
